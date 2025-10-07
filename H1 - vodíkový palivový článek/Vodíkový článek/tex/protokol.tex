@@ -117,7 +117,9 @@ Podle pracovního úkolu 3 jsme použili edukační set FC, který simuluje reá
 \end{table}
 
 \subsection{Zpracování výsledků}
-Na základě pracovního úkolu 4 jsme exportovali data z testovací stanice našeho vyrobeného článku. V grafu \ref{fig:polar-krivk} 
+Na základě pracovního úkolu 4 jsme exportovali data z testovací stanice našeho vyrobeného článku. V grafu \ref{fig:polar-krivk} je znázorněna polarizační křivka a závislost výkonové hustoty na proudové hustotě. Polarizační křivku (označena šedě) můžeme rozdělit do tří oblasti, jak je znázorněno na obrázku modře.
+
+
 \begin{figure}[!h]
     \centering
     \includegraphics[width=1\linewidth]{H1 - vodíkový palivový článek/Polarizační křivka.png}
@@ -125,6 +127,18 @@ Na základě pracovního úkolu 4 jsme exportovali data z testovací stanice na�
     \label{fig:polar-krivk}
 \end{figure}
 
+Pro kinetickou (aktivační) oblast jsme odhadli Tafelův sklon na základě fitem Tafelovy rovnice. Tento fit je znázorněn v grafu \ref{fig:Tafelův-sklon}. Na osu x jsme vynesli logaritmus z naměřeného proudu a na osu y naměřené přepětí. Tuto závislost jsme fitovali lineární regresí y=ax+b se získanými parametry:
+
+\begin{equation}
+    a = 
+\end{equation}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{H1 - vodíkový palivový článek//Tafelův sklon.png}
+    \caption{Tafelův sklon}
+    \label{fig:Tafelův-sklon}
+\end{figure}
     
 % ----------------------------------------------------------------------
 %  Diskuse výsledků
