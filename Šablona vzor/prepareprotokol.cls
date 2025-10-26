@@ -93,11 +93,12 @@ Připomínky opravujícího:\\
 \begin{tabular}{!{\vrule width 1.5pt} l !{\vrule width 1pt} c !{\vrule width 1pt} c !{\vrule width 1.5pt}}
 \linkadva
    & Možný počet bodů & Udělený počet bodů \\\linkadva
-  Teoretická část a Literatura & 0--1 &  \\\linka
-  Výsledky a zpracování měření & 0--7 &  \\\linka
-  Diskuse výsledků & 0--3 &  \\\linka
-  Závěr & 0--1 &  \\\linkadva
-  \hspace*{\fill} \textbf{Celkem} \hspace*{\fill}& max. 12 &  \\
+  Teoretická část & 0--2 &  \\\linka
+  Výsledky a zpracování měření & 0--9 &  \\\linka
+  Diskuse výsledků & 0--4 &  \\\linka
+  Závěr & 0--1 &  \\\linka
+  Použitá literatura & 0--1 &  \\\linkadva
+  \hspace*{\fill} \textbf{Celkem} \hspace*{\fill}& max. 17 &  \\
 \linkadva
 \end{tabular}
 \phantom{d}
