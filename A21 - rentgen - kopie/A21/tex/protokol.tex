@@ -1,11 +1,72 @@
+
 % ----------------------------------------------------------------------
 %  Pracovní úkoly
 % ----------------------------------------------------------------------
 \section{Pracovní úkoly}
 
 \begin{enumerate}
-\item 
+\item S využitím krystalu LiF jako analyzátoru proveďte měření následujících rentgenových spekter:
 
+\begin{enumerate}
+    \item Rentgenka s Cu anodou.
+
+    \begin{enumerate}
+        \item proměřte krátkovlnné oblasti spekter brzdného záření při napětích 15 kV/1 mA, 25 kV/0,8 mA, 30 kV/0,8 mA, 33 kV/0,8 mA. K měření používejte tyto parametry: clonu o průměru 2 mm, interval Braggova úhlu pro 15 kV v rozmezí (10° – 15°) s krokem 0.2° a dobou expozice 8 s a pro ostatní napětí interval Braggova úhlu (3° – 10°) s krokem 0,2° a dobou expozice 5 s;
+
+        \item proměřte charakteristická spektra rentgenky při napětích 15 kV/1 mA a 33 kV/0,8 mA. K měření používejte tyto parametry: clonu o průměru 2 mm, interval Braggova úhlu (15° – 30°), krok 0,1° a dobu expozice 2 s;
+
+        \item proměřte tvar spektra s Zr absorbérem. K měření používejte tyto parametry: clonu s Zr absorbérem tloušťky 0,05 mm, interval Braggova úhlu (3° – 30°), krok 0,1° a dobu expozice 2 s;
+
+        \item proměřte tvar spektra s Ni absorbérem. K měření používejte tyto parametry: clonu s Ni absorbérem tloušťky 0,01 mm, interval Braggova úhlu (3° – 30°), krok 0,1° a dobu expozice 2 s.
+    \end{enumerate}
+
+\item Rentgenka s Fe anodou
+
+    \begin{enumerate}
+        \item proměřte charakteristické spektrum rentgenky při napětí 33 kV/0,8 mA. K měření používejte tyto parametry: clonu o průměru 2 mm, interval Braggova úhlu (3° – 30°), krok 0,1° a dobu expozice 2 s;
+
+        \item proměřte tvar spektra s Zr absorbérem. K měření používejte tyto parametry: clonu s Zr absorbérem tloušťky 0,05 mm, interval Braggova úhlu (3° – 30°), krok 0,1° a dobu expozice 3 s.
+    \end{enumerate}
+
+\item Rentgenka s Mo anodou.
+
+    \begin{enumerate}
+        \item proměřte charakteristické spektrum rentgenky při napětí 33 kV/0.8 mA. K měření používejte tyto parametry: clonu o průměru 2  mm, interval Braggova úhlu (3° – 35°), krok 0,1° a dobu expozice 3 s.
+    \end{enumerate}
+
+\item Rentgenka s Cu anodou:
+
+    \begin{enumerate}
+        \item proměřte charakteristické spektrum rentgenky při napětí 33 kV/0,8 mA v intervalu Braggova úhlu (42° – 51°). K měření používejte tyto parametry: clonu o průměru 2 mm, krok 0,1° a dobou expozice 2 s.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\item Interpretujte naměřené výsledky (pro mezirovinnou vzdálenost krystalu LiF používejte hodnotu d = 201,4 pm):
+
+\begin{enumerate}
+    \item Krátkovlnná mez brzdného záření
+
+    \begin{enumerate}
+        \item Ze změřených mezních vlnových délek (respektive frekvencí) určete hodnotu Planckovy konstanty a oceňte přesnost měření
+    \end{enumerate}
+
+\item Moseleyův zákon
+
+    \begin{enumerate}
+        \item Přesvědčte se, že naměřené úhlové frekvence spektrálních čar K$\alpha$ a K$\beta$ pro různé prvky splňují Moseleyův zákon. Ze směrnice příslušné závislosti určete hodnotu Rydbergovy úhlové frekvence a využitím této hodnoty určete též průměrnou hodnotu stínící konstanty.
+
+        \item Přesvědčte se, že i naměřené polohy absorpčních hran Zr a Ni splňují Moseleyův zákon.
+
+        \item Všimněte si, že absorpční hrana Ni koinciduje se spektrální čarou K$\beta$ mědi; této skutečnosti se využívá v rentgenové difraktografii pro monochromatizaci charakteristického spektra mědi. Z provedeného měření určete filtrační efekt niklu pro čáru K$\beta$.
+    \end{enumerate}
+
+\item Úhlová disperze
+
+    \begin{enumerate}
+        \item Ze změřených spekter molybdenu určete velikost úhlové disperze pro různé řády difrakce.
+    \end{enumerate}
+\end{enumerate}
 
 \end{enumerate}
 
@@ -25,30 +86,154 @@ Chyba je spočtena pomocí metody přenosu chyb \cite{bib:metoda-prenosu-chyb} j
 % ----------------------------------------------------------------------
 \section{Výsledky a zpracování měření}
 
-\subsection{Laboratorní podmínky}
+\subsection{Určení Planckovy konstanty}
+Naměřili jsme krátkovlnné oblasti spekter pro Cu anodu podle prvního pracovního úkolu. Z těchto závislostí jsme vybrali hodnoty s lineární závislostí nad nulou. Pouze tyto hodnoty jsme proložili lineární regresí a určili bod ve kterém tato přímka protíná 0 na y-ose. Tyto hodnoty jsme opět zobrazili v grafu v závislosti na urychlovacím napětí. Nakonec jsme závislost $\frac{1}{sin(x/2)}(U)$ proložili lineárním fitem se zafixovaným absolutním členem na 0. X odpovídá úhlu detektoru, který dělíme 2 pro přepočet na úhel přicházejícího svazku. Tato závislost je znázorněna na obrázku.
 
-    Měření bylo prováděno za laboratorních podmínek uvedených v tabulce \ref{tab:lab_pod}.
 
-    \begin{table}[h]
-        \caption{Laboratorní podmínky}
-        \label{tab:lab_pod}
-        \centering
-        \begin{tabular}{|c|c|c|} 
-        \hline
-            t / °C & p / hPa & vlhkost / \%RH  \\ 
-        \hline
-            22,9(4)   & 977(2)   & 34(3)            \\
-        \hline
-        \end{tabular}
-    \end{table}
 
-\subsection{Podnadpis}
+Poté jsme z parametru fitu získali naměřenou hodnotu Planckovy konstanty
+
+\begin{equation}
+    \nonumber
+    h = (8,1 \pm 0,5) \; J \cdot s
+\end{equation}
+
+
+\subsection{Moseleyův zákon}
+
+Proměřili jsme charakteristické spektrum pro anody složené z Fe, Mo a Cu při urychlovacím napětím napětí 33 kV a proudu 0,8 mA. Podle zadání $\cite{bib:zadani}$ jsme pro některá měření použili zr absorbér tloušťky 0,05 mm a Ni absorbér s tloušťkou 0,01 mm. Pokud nebyl použit ani jeden z těchto absorbérů měřili jsme se clonou o průměru 2 mm. Doba expozice pro každý úhel byla nastavena na 2 s pro Fe a Cu, pro Mo 3 s. Naměřené výsledky jsou uvedeny v tabulce \ref{tab:vlnove_delky}. Uvedený úhel je úhel v tabulce je úhel mezi krystalem analyzátoru a přilétávajícím svazkem, který je poloviční oproti úhlu detektoru, který jsme měřili. Pro jednotlivé materiály jsme vypsali také teoretické hodnoty podle tabulek v praktiku.
+
+\begin{table}[h!]
+\centering
+\caption{Porovnání naměřených a teoretických vlnových délek}
+% Specifikace sloupců: l (levý), c (střed), l (levý), r (pravý), r (pravý)
+\begin{tabular}{l c l r r}
+\hline\hline
+% Hlavička tabulky
+Použité materiály & Úhel svazku / $^\circ$ & Typ přechodu & $\lambda$ / pm & $\lambda_{\text{teor}}$ / pm \\
+\hline
+% Data - Cu
+Cu 15 kV & 19,9 & K$_{\beta}$, n=1 & 137,1 & 140,4 \\
+         & 22,2 & K$_{\alpha}$, n=1 & 152,2 & 154,1 \\
+\hline
+Cu 33 kV & 19,9 & K$_{\beta}$, n=1 & 137,1 & \\
+         & 22,1 & K$_{\alpha}$, n=1 & 151,5 & \\
+         & 43,3 & K$_{\beta}$, n=2 & 138,1 & 139,6 \\ 
+         & 49,55 & K$_{\alpha}$, n=2 & 153,3 & 154,9 \\ 
+\hline
+Cu 33 kV, Zr & 19,9 & K$_{\beta}$, n=1 & 137,1 & \\
+             & 22,2 & K$_{\alpha}$, n=1 & 152,2 & \\
+\hline
+Cu 33 kV, Ni & 19,9 & K$_{\beta}$, n=1 & 137,1 & \\
+             & 22,2 & K$_{\alpha}$, n=1 & 152,2 & \\
+\hline % <-- Oddělovač
+% Data - Fe
+Fe 33 kV & 25,8 & K$_{\beta}$, n=1 & 175,3 & 175,3 \\
+         & 28,6 & K$_{\alpha}$, n=1 & 192,8 & 194,7 \\
+\hline
+Fe 33 kV, Zr & 25,7 & K$_{\beta}$, n=1 & 174,7 & \\
+             & 28,6 & K$_{\alpha}$, n=1 & 192,8 & \\
+\hline % <-- Oddělovač
+% Data - Mo
+Mo 33 kV & 8,7 & K$_{\beta}$, n=1 & 60,9 & 64,4 \\
+         & 9,8 & K$_{\alpha}$, n=1 & 68,6 & 70,4 \\
+         & 17,75 & K$_{\beta}$, n=2 & 61,4 & 63,9 \\ % <-- Opraveno
+         & 20,25 & K$_{\alpha}$, n=2 & 69,7 & 71,2\\ % <-- Opraveno
+\hline % <-- Oddělovač  
+% Data - Zr
+Zr       & 9,7 &               & 67,9 & \\
+\hline % <-- Oddělovač
+% Data - Ni
+Ni       & 19,9 &               & 137,1 & \\
+\hline\hline
+\end{tabular}
+\label{tab:vlnove_delky}
+\end{table}
+
+Na obrázku \ref{fig:cu-poro-abs} jsou znázorněna charakteristická spektra Cu se clonou, se Zr a Ni absorbérem pro porovnání. Všechny závislosti jsou měřeny při urychlovacím napětí 33 kV.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{A21 - rentgen/Cu provnání s absorbátorama.png}
+    \caption{Porovnání charakteristických spekter mědi bez a s absorbéry.}
+    \label{fig:cu-poro-abs}
+\end{figure}
+
+Vidíme, že naměřené vlnové délky jsou posunuté hodnotou systematicky oproti teoretické hodnotě podle tabulek v praktiku. Zpětně tak můžeme určit systematickou chybu měření. Tato nejistota úhlu přicházejícího svazku pak je 0,5 °. Jak jsme předpokládali krystal LiF není v aparatuře umístěn s naprostou přesností, je ale mírně natočen. Proto jsme při měření pozorovali nenulové hodnoty pro úhly blízké nule, viz. diskuze.
+
+Dále jsme určili Rydbergovu úhlovou frekvenci z naměřených dat a vztahu pro Moseleyův zákon. Z tabulky \ref{tab:vlnove_delky} jsme uvažovali pouze přechody z n=2 do n=1. Na obrázku je znázorněna závislost $\lambda^{-\frac{1}{2}}$ na atomovém čísle $Z$ a proležena lineárním fitem. Závislost tedy odpovídá vztahu $\frac{1}{\sqrt{\lambda}}= a \cdot Z + b$. Výsledky jsou zobrazeny v tabulce \ref{tab:fit_parametry}. Neuvažujeme zde chyby fitu, protože jsme fitovali vždy dvě hodnoty.
+
+\begin{table}[h!]
+\centering
+\caption{Parametry lineárního fitu Moseleyova zákona}
+% Používám zarovnání doprava (r) pro čísla
+\begin{tabular}{l r r r r}
+\hline\hline
+% Hlavička tabulky
+Přechod & $A \text{ / } (10^{-3} \text{ pm}^{-1/2})$ & $B \text{ / } (10^{-3} \text{ pm}^{-1/2})$ & $R_{\omega} \text{ / } (10^{16} \text{ s}^{-1})$ & $s$ \\
+\hline
+% Data
+% Předpokládám, že první řádek je K_beta a druhý K_alpha
+$K_{\beta}$ & 3,00 & -6,22 & 2,26 & 2,07 \\
+$K_{\alpha}$ & 3,27 & -9,79 & 2,69 & 2,99 \\
+\hline\hline
+\end{tabular}
+\label{tab:fit_parametry}
+\end{table}
+
+\subsection{Úhlová disperze}
+U Mo anody jsme pozorovali 2 řády difrakce. V tabulce jsou zobrazeny naměřené hodnoty. $\theta_1$ značí polohu peaku, při kterém jsme pozorovali přechod $\alpha$, $\theta_2$ pak přechod $\beta$. Uvažujeme již korigované hodnoty o systematickou chybu.
+
+\begin{table}[h!]
+\centering
+\caption{Shrnutí výsledků s dopočtenými chybami (přepočtené hodnoty $\lambda$)}
+% Používám zarovnání doprava (r) pro čísla a (c) pro první sloupec
+\begin{tabular}{c r r r r r}
+\hline\hline
+% Hlavička tabulky
+řád ($n$) & $\theta_1 \text{ / } (^\circ)$ & $\theta_2 \text{ / } (^\circ)$ & $\lambda_1 \text{ / } (\text{pm})$ & $\lambda_2 \text{ / } (\text{pm})$ & $\frac{d\theta}{d\lambda} \text{ / } (\text{nm}^{-1})$ \\
+\hline
+% Data
+1 & $10,3 \pm 0,1$ & $9,2 \pm 0,1$ & $72,0 \pm 0,7$ & $64,4 \pm 0,7$ & $2,520 \pm 0,001$ \\
+2 & $25,25 \pm 0,1$ & $22,75 \pm 0,1$ & $85,9 \pm 0,7$ & $77,9 \pm 0,7$ & $5,435 \pm 0,003$ \\
+\hline\hline
+\end{tabular}
+\label{tab:vysledky_disperze}
+\end{table}
+
+To jsme nakonec porovnali s teoretickými hodnotami:
+
+Pro n=1:
+\begin{equation}
+    \nonumber
+    K_\alpha = 2,525 \; mm^{-1}
+\end{equation}
+
+\begin{equation}
+    \nonumber
+    K_\beta = 2,516 \; mm^{-1}
+\end{equation}
+
+Pro n=2:
+
+\begin{equation}
+    \nonumber
+    K_\alpha = 5,309 \; mm^{-1}
+\end{equation}
+
+\begin{equation}
+    \nonumber
+    K_\beta = 5,234 \; mm^{-1}
+\end{equation}
 
     
 % ----------------------------------------------------------------------
 %  Diskuse výsledků
 % ----------------------------------------------------------------------			
 \section{Diskuse výsledků}
+Nenulové hodnoty u nuly - naklonění LiF a průměr detektoru.
+
+
 
 % ----------------------------------------------------------------------
 %  Závěr
