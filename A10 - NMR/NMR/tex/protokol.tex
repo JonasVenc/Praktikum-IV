@@ -4,9 +4,13 @@
 \section{Pracovní úkoly}
 
 \begin{enumerate}
-\item 
+\item Nastavení optimálních excitačních podmínek signálu FID $^1H$ ve vzorku pryže, stanovení spin mřížkové relaxační doby $T_1$.
 
+\item Měření závislosti amplitudy signálu FID $^1H$ ve vzorku pryže na délce excitačního pulzu, určení velikosti amplitudy radiofrekvenčního pole $B_1$.
 
+\item Studium signálu ($\pi$/2, $\pi$) spinového echa $^1H$ ve vzorku pryže, stanovení spin spinové relaxační doby $T_2$.
+
+\item Studium procesu koherentní sumace, zlepšování poměru signál/šum, ověření základních zákonitostí (kvalitativně, kvantitativně).
 \end{enumerate}
 
 % ----------------------------------------------------------------------
@@ -25,13 +29,62 @@ Chyba je spočtena pomocí metody přenosu chyb \cite{bib:metoda-prenosu-chyb} j
 % ----------------------------------------------------------------------
 \section{Výsledky a zpracování měření}
 
-\subsection{Podnadpis}
+\subsection{Nastavení optimálních podmínek}
+Pro generaci hlavního magnetického pole $B_0$ jsme použili permanentní magnet. Jedná sice o magnet s nižší magnetickou indukcí oproti supravodivému, je ale jednodušší na údržbu. Není nutné tento magnet chladit na nízké teploty například tekutým dusíkem. Neobsahuje také žádné korekční cívky, které by optimalizovali homogenitu vzniklého pole (tzv. shimování), které se nacházejí u pokročilejších přístrojů. V našem případě tedy nacházíme nehomogenity v různých polohách vzorku v magnetu. Změnou polohy jsme vzorek umístili do polohy, kde jsme pozorovali nejoptimálnější homogenitu (nejčistší peak). Předtím jsme odhadli mrtvou dobu na 60 $\mu s$ z grafu. Poté jsme upravili precesní frekvenci tak, abychom na grafu po Fourierově transformaci pozorovali maximum peaku přibližně v nule. Osa x zde udává právě rozdíl oproti této nastavené frekvenci. Takto nastavená frekvence byla $\nu_0 = 18,307 \; MHz$. S uvážením $\gamma = 42,512990 ;\ MHz \cdot T^{-1}$ podle \cite{bib:zadani} můžeme dopočítat magnetickou indukci použitého magnetu na
+
+\begin{equation}
+    B_0 = 0,43 \; T
+\end{equation}
+
+\subsection{Měření závislosti amplitudy signálu na délce excitačního pulzu}
+Dobu celkové sekvence jsme ponechali na 400 $\mu s$. Během této jedné sekvence proběhl jeden impuls, jehož délku jsme měnili a odečítali amplitudu výsledného peaku. Prodlevu D1 jsme využili k nastavení mrtvé doby tak, že program počítá již s pouze relaxačním signálem. Naměřené hodnoty jsou uvedeny v tabulce \ref{tab:puls_amplituda}. Tato závislost je dále znázorněna v grafu a proložena kosinovým fitem. Amplituda NMR signálu je přímo úměrná sinu úhlu otočení vektoru magnetizace a tento úhel je přímo úměrný délce pulzu, proto jsme zvolili fit ve tvaru $y = A \cdot \abs{sin(B \cdot x}$.
+
+\begin{table}[!h]
+\centering
+\caption{Závislost amplitudy signálu na délce pulzu}
+\label{tab:puls_amplituda}
+\begin{tabular}{c c}
+\hline\noalign{\smallskip}
+Délka pulzu ($\mu$s) & Amplituda (Au) \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+2 & 0,02476 \\
+4 & 0,0377 \\
+6 & 0,03461 \\
+8 & 0,01628 \\
+10 & 0,01432 \\
+12 & 0,03464 \\
+14 & 0,04094 \\
+16 & 0,02927 \\
+18 & 0,00742 \\
+20 & 0,02205 \\
+22 & 0,03667 \\
+24 & 0,03471 \\
+26 & 0,01789 \\
+28 & 0,01186 \\
+30 & 0,02996 \\
+32 & 0,03794 \\
+34 & 0,02879 \\
+36 & 0,01032 \\
+38 & 0,02073 \\
+40 & 0,03525 \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+\subsection{Stanovení spin mřížkové relaxační doby $T_1$}
+
 
     
 % ----------------------------------------------------------------------
 %  Diskuse výsledků
 % ----------------------------------------------------------------------			
 \section{Diskuse výsledků}
+
+Indukce B0 podle frekvence v souladu se stud. textem
 
 % ----------------------------------------------------------------------
 %  Závěr
