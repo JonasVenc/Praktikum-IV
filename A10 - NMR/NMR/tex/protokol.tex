@@ -109,11 +109,12 @@ Podobně délku pulzu, při které dochází k natočení o 180°, tedy minimál
 \end{equation}
 
 \subsection{Stanovení spin mřížkové relaxační doby $T_1$}
+
 Nastavili jsme délku pulzu na 4 $\mu s$, což odpovídá maximální amplitudě z předchozího měření. Proměřili jsme výslednou amplitudu v závislosti na době opakování celé frekvence. Naměřené hodnoty jsou uvedeny v tabulce \ref{tab:relaxace_T1}. Tuto závislost jsme následně znázornili v grafu. Závislost jsem podle \cite{bib:studijni-text} proložili fitem ve tvaru $y = A \cdot \exp{-\frac{x}{B}}$.
 
 \begin{table}[!h]
 \centering
-\caption{Závislost amplitudy signálu na době opakování $T_0$.}
+\caption{Závislost amplitudy signálu na době opakování}
 \label{tab:relaxace_T1}
 \begin{tabular}{c c}
 \hline\noalign{\smallskip}
@@ -137,6 +138,59 @@ Doba opakováni sekvence (ms) & Amplituda (Au) \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{A10 - NMR/T1.png}
+    \caption{Závislost amplitudy signálu na době opakování}
+    \label{fig:T1}
+\end{figure}
+
+Z fitu jsme určili relaxační dobu $T_1$, což odpovídá parametru $B$
+
+\begin{equation}
+    T_1 = (44 \pm 2) \; ms
+\end{equation}
+
+Parametr $A$ je roven
+
+\begin{equation}
+    A = (0,0368 \pm 0,0005) \; Au
+\end{equation}
+
+\subsection{Spinové echo, stanovení spin spinové relaxační doby $T_2$}
+Měření relaxační doby $T_2$ jsme prováděli pomoci spinového echa. Proto jsme nastavili i druhý pulz během každé sekvence. Délka prvního pulzu zůstala nezměněná z předchozí úlohy (vychýlení o 90°), délku druhého pulzu jsme nastavili naopak na 10 $\mu s$, tedy takovou délku aby došlo k otočení o 180°. Měnili jsme nastavení prodlev $D1$ a $D2$ tak, aby se prodlevy po ukončení obou pulzů rovnaly. Naměřené hodnoty včetně nastavených parametrů $D1$ a $D2$ jsou zobrazeny v tabulce \ref{tab:relaxace_T2}.
+
+\begin{table}[!h]
+\centering
+\caption{Závislost amplitudy signálu spinového echa na odstupu pulzů.}
+\label{tab:relaxace_T2}
+\begin{tabular}{c c c}
+\hline\noalign{\smallskip}
+D2 (ms) & D3 (ms) & Amplituda (Au) \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+0,1 & 0,11 & 0,05176 \\
+0,2 & 0,21 & 0,05345 \\
+0,3 & 0,31 & 0,03798 \\
+0,4 & 0,41 & 0,03303 \\
+0,5 & 0,51 & 0,02928 \\
+0,6 & 0,61 & 0,0263 \\
+0,7 & 0,71 & 0,02318 \\
+0,8 & 0,81 & 0,02016 \\
+0,9 & 0,91 & 0,0182 \\
+1 & 1,01 & 0,01615 \\
+1,1 & 1,11 & 0,01456 \\
+1,4 & 1,41 & 0,01042 \\
+2 & 2,01 & 0,00599 \\
+2,5 & 2,51 & 0,00382 \\
+3 & 3,01 & 0,00222 \\
+3,5 & 3,51 & 0,00179 \\
+4 & 4,01 & 0,0014 \\
+5 & 5,01 & 0,0008 \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
 
     
 % ----------------------------------------------------------------------
