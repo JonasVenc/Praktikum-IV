@@ -159,11 +159,11 @@ Parametr $A$ je roven
 \end{equation}
 
 \subsection{Spinové echo, stanovení spin spinové relaxační doby $T_2$}
-Měření relaxační doby $T_2$ jsme prováděli pomoci spinového echa. Proto jsme nastavili i druhý pulz během každé sekvence. Délka prvního pulzu zůstala nezměněná z předchozí úlohy (vychýlení o 90°), délku druhého pulzu jsme nastavili naopak na 10 $\mu s$, tedy takovou délku aby došlo k otočení o 180°. Měnili jsme nastavení prodlev $D1$ a $D2$ tak, aby se prodlevy po ukončení obou pulzů rovnaly. Naměřené hodnoty včetně nastavených parametrů $D1$ a $D2$ jsou zobrazeny v tabulce \ref{tab:relaxace_T2}.
+Měření relaxační doby $T_2$ jsme prováděli pomoci spinového echa. Proto jsme nastavili i druhý pulz během každé sekvence. Délka prvního pulzu zůstala nezměněná z předchozí úlohy (vychýlení o 90°), délku druhého pulzu jsme nastavili naopak na 10 $\mu s$, tedy takovou délku aby došlo k otočení o 180°. Měnili jsme nastavení prodlev $D1$ a $D2$ tak, aby se prodlevy po ukončení obou pulzů rovnaly. Naměřené hodnoty včetně nastavených parametrů $D1$ a $D2$ jsou zobrazeny v tabulce \ref{tab:relaxace_T2}. Závislost jsme znázornili v grafu \ref{fig:T2-echo} a proložili fitem $y = A \cdot \exp{-\frac{2x}{B}}$.
 
 \begin{table}[!h]
 \centering
-\caption{Závislost amplitudy signálu spinového echa na odstupu pulzů.}
+\caption{Závislost amplitudy signálu spinového echa na odstupu pulzů}
 \label{tab:relaxace_T2}
 \begin{tabular}{c c c}
 \hline\noalign{\smallskip}
@@ -191,6 +191,27 @@ D2 (ms) & D3 (ms) & Amplituda (Au) \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{A10 - NMR/T2 echo.png}
+    \caption{Závislost amplitudy signálu spinového echa na odstupu pulzů}
+    \label{fig:T2-echo}
+\end{figure}
+
+Parametr $B$ odpovídá relaxační době $T_2$
+
+\begin{equation}
+    T_2 = (1,48 \pm 0,08) \; ms
+\end{equation}
+
+Parametr $A$ je roven
+
+\begin{equation}
+    A = (0,061 \pm 0,002) \; Au
+\end{equation}
+
+\subsection{Koherentní sumace}
+Nakonec jsme ověřili vztah mezi směrodatnou odchylkou šumu a počtu zprůměrování (parametr zpracování signálu). Tento parametr jsme postupně zvyšovali a neměřený graf po zprůměrovaní a provedení Fourierově transformaci ukládali. Poté jsme spočítali směrodatnou odchylku v oblasti šumu.
 
     
 % ----------------------------------------------------------------------
