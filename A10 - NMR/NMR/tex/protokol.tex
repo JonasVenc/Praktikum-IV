@@ -37,7 +37,7 @@ Pro generaci hlavního magnetického pole $B_0$ jsme použili permanentní magne
 \end{equation}
 
 \subsection{Měření závislosti amplitudy signálu na délce excitačního pulzu}
-Dobu celkové sekvence jsme ponechali na 400 $\mu s$. Během této jedné sekvence proběhl jeden impuls, jehož délku jsme měnili a odečítali amplitudu výsledného peaku. Prodlevu D1 jsme využili k nastavení mrtvé doby tak, že program počítá již s pouze relaxačním signálem. Naměřené hodnoty jsou uvedeny v tabulce \ref{tab:puls_amplituda}. Tato závislost je dále znázorněna v grafu a proložena kosinovým fitem. Amplituda NMR signálu je přímo úměrná sinu úhlu otočení vektoru magnetizace a tento úhel je přímo úměrný délce pulzu, proto jsme zvolili fit ve tvaru $y = A \cdot \abs{sin(B \cdot x}$.
+Dobu celkové sekvence jsme ponechali na 400 $\mu s$. Během této jedné sekvence proběhl jeden impuls, jehož délku jsme měnili a odečítali amplitudu výsledného peaku. Prodlevu D1 jsme využili k nastavení mrtvé doby tak, že program počítá již s pouze relaxačním signálem. Naměřené hodnoty jsou uvedeny v tabulce \ref{tab:puls_amplituda}. Tato závislost je dále znázorněna v grafu \ref{fig:amp-del} a proložena kosinovým fitem. Amplituda NMR signálu je přímo úměrná sinu úhlu otočení vektoru magnetizace a tento úhel je přímo úměrný délce pulzu, proto jsme zvolili fit ve tvaru $y = A \cdot \abs{sin(B \cdot x}$.
 
 \begin{table}[!h]
 \centering
@@ -71,12 +71,72 @@ Délka pulzu ($\mu$s) & Amplituda (Au) \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{A10 - NMR/Ampl_delka pulzu.png}
+    \caption{Závislost amplitudy signálu na délce pulzu}
+    \label{fig:amp-del}
+\end{figure}
 
+Parametr $B$ odpovídá úhlové rychlosti otáčení $\omega$
 
+\begin{equation}
+    \omega = (0,3440 \pm 0,0007) \; rad \cdot \mu s^{-1}
+\end{equation}
 
+Stejným způsobem jako v předchozím úkolu můžeme spočítat magnetickou indukci $B_1$
+
+\begin{equation}
+    B_1 = 0,00129 \; T
+\end{equation}
+
+Parametr fitu $A$ je
+
+\begin{equation}
+    A = (0,0394 \pm 0,0006) \; Au
+\end{equation}
+
+Během měření jsme odhadli délku pulzu, pro kterou je vychýlení 90°, tedy bod s nejvyšší amplitudou na
+
+\begin{equation}
+    \tau_{max} = 4 \; \mu s
+\end{equation}
+
+Podobně délku pulzu, při které dochází k natočení o 180°, tedy minimální amplitudu na
+
+\begin{equation}
+    \tau_{min} = 10 \; \mu s
+\end{equation}
 
 \subsection{Stanovení spin mřížkové relaxační doby $T_1$}
+Nastavili jsme délku pulzu na 4 $\mu s$, což odpovídá maximální amplitudě z předchozího měření. Proměřili jsme výslednou amplitudu v závislosti na době opakování celé frekvence. Naměřené hodnoty jsou uvedeny v tabulce \ref{tab:relaxace_T1}. Tuto závislost jsme následně znázornili v grafu. Závislost jsem podle \cite{bib:studijni-text} proložili fitem ve tvaru $y = A \cdot \exp{-\frac{x}{B}}$.
 
+\begin{table}[!h]
+\centering
+\caption{Závislost amplitudy signálu na době opakování $T_0$.}
+\label{tab:relaxace_T1}
+\begin{tabular}{c c}
+\hline\noalign{\smallskip}
+Doba opakováni sekvence (ms) & Amplituda (Au) \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+5 & 0,00454 \\
+10 & 0,00883 \\
+15 & 0,01154 \\
+20 & 0,01473 \\
+50 & 0,02532 \\
+60 & 0,02697 \\
+70 & 0,02838 \\
+120 & 0,03298 \\
+180 & 0,03489 \\
+240 & 0,03556 \\
+300 & 0,03649 \\
+350 & 0,03663 \\
+380 & 0,03702 \\
+400 & 0,03866 \\
+520 & 0,03922 \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
 
     
 % ----------------------------------------------------------------------
@@ -85,6 +145,13 @@ Délka pulzu ($\mu$s) & Amplituda (Au) \\
 \section{Diskuse výsledků}
 
 Indukce B0 podle frekvence v souladu se stud. textem
+
+Malá B1 potvrzuje teorii
+
+T1 nestíhá relaxovat
+
+při echu jiný začátek, viz papír
+
 
 % ----------------------------------------------------------------------
 %  Závěr
