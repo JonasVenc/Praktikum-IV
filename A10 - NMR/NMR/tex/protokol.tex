@@ -17,12 +17,51 @@
 %  Teoretická část
 % ----------------------------------------------------------------------
 \section{Teoretická část}
-
-Chyba je spočtena pomocí metody přenosu chyb \cite{bib:metoda-prenosu-chyb} jako
-
-\begin{equation}
-    \sigma = \sqrt{\sum^n_{i=1} \left( \frac{\partial f}{\partial x_i} \right)^2 \sigma^2_{x_i}}
+Jev nukleární magnetické rezonance (NMR) využívá interakci magnetických momentů $\vec{\mu}$ atomových jader s vnějším magnetickým polem. V tomto praktiku se zaměřujeme na jádra vodíku ${}^{1}H$ (protony), která mají spin $I=1/2$ a tedy nenulový magnetický moment. Vztah mezi magnetickým momentem a jaderným spinem $\vec{I}$ je dán gyromagnetickým poměrem $\gamma$, konstantou charakteristickou pro dané jádro:
+\begin{equation} \label{eq:mu_gamma_I}
+\vec{\mu} = \gamma \vec{I} \tag{3}
 \end{equation}
+Ve statickém magnetickém poli o indukci $\vec{B}_0$ (typicky orientovaném podél osy $z$) vykonává magnetický moment Larmorovu precesi kolem směru pole s úhlovou frekvencí $\omega_0$:
+\begin{equation} \label{eq:larmor}
+\omega_0 = -\gamma B_0 \tag{6}
+\end{equation}
+
+Lineární rezonanční frekvence (Larmorova frekvence) je pak $\nu_0 = |\omega_0 / 2\pi|$.
+
+V makroskopickém popisu sledujeme celkovou jadernou magnetizaci $\vec{m}$ (vektorový součet momentů v jednotce objemu). V tepelné rovnováze ve statickém poli $\vec{B}_0$ vzniká nenulová rovnovážná magnetizace $m_0$ ve směru pole ($z$). Pokud je systém vychýlen z rovnováhy, vrací se k ní pomocí dvou hlavních relaxačních procesů:
+\begin{itemize}
+    \item \textbf{Spin-mřížková (podélná) relaxace ($T_1$):} Popisuje návrat podélné složky magnetizace $m_z$ k rovnovážné hodnotě $m_0$ prostřednictvím výměny energie s okolím („mřížkou“). Po vychýlení platí:
+    \begin{equation} \label{eq:T1_relax}
+    m_z(t) = m_0 (1 - \exp(-t/T_1)) \tag{8}
+    \end{equation}
+    
+    \item \textbf{Spin-spinová (příčná) relaxace ($T_2$):} Popisuje zánik příčné složky magnetizace $m_t$ (v rovině $xy$) v důsledku ztráty fázové koherence mezi jednotlivými spiny. Pokles je dán vztahem:
+    \begin{equation} \label{eq:T2_relax}
+    m_t(t) = m_t(0) \cdot \exp(-t/T_2) \tag{9}
+    \end{equation}
+    
+    V pevných látkách, jako je pryž, jsou spin-spinové interakce silné a vedou k rychlému rozfázování, proto zde obvykle platí $T_2 \ll T_1$.
+\end{itemize}
+
+V pulzní NMR se systém excituje krátkými ($\tau \ll T_1, T_2$) radiofrekvenčními (RF) pulzy magnetického pole $\vec{B}_1$ (kolmého na $\vec{B}_0$). V rotující soustavě souřadné, která rotuje kolem osy $z$ s frekvencí $\omega \approx \omega_0$, působí na magnetizaci efektivní pole $\vec{B}_{ef}$. V rezonanci ($\omega = \omega_0$) je $\vec{B}_{ef} = (B_1, 0, 0)$ (vhodnou volbou fáze) a magnetizace $\vec{m}$ rotuje kolem $\vec{B}_1$ (osy $x'$) s úhlovou rychlostí $\omega_1 = \gamma B_1$. Pulz o délce $\tau$ způsobí otočení magnetizace o úhel $\rho = \omega_1 \tau = \gamma B_1 \tau$. Po pulzu vzniká příčná složka magnetizace:
+\begin{equation} \label{eq:FID_amp}
+m_t(0) = m_0 \cdot \sin(\rho) = m_0 \cdot \sin(\gamma B_1 \tau) \tag{14}
+\end{equation}
+Speciální význam mají $\pi/2$-pulz ($\rho = \pi/2$), který maximalizuje příčnou magnetizaci, a $\pi$-pulz ($\rho = \pi$), který ji invertuje (nebo otočí o $180^\circ$ v příčné rovině).
+
+Po excitačním pulzu precesuje příčná magnetizace v poli $B_0$ a indukuje signál zvaný \textbf{Free Induction Decay (FID)}. Jeho pokles je v reálných experimentech často urychlen nehomogenitou pole $B_0$.
+
+Pro měření skutečné relaxační doby $T_2$ se využívá sekvence \textbf{spinového echa}: $(\pi/2) - t_w - (\pi)$. Druhý, $\pi$-pulz, aplikovaný v čase $t_w$ po prvním $\pi/2$-pulzu, způsobí „přefázování“ spinů, které se rozeběhly kvůli nehomogenitě pole. V čase $t = 2t_w$ dojde k opětovnému sfázování a vzniku signálu spinového echa. Amplituda tohoto echa $A(t_w)$ klesá s časem $t_w$ v důsledku skutečné $T_2$ relaxace:
+\begin{equation} \label{eq:echo_amp}
+A(t_w) \approx A(0) \cdot \exp\left(-\frac{2t_w}{T_2}\right) \tag{15}
+\end{equation}
+
+
+Pro zlepšení poměru signálu k šumu (S/N) se v NMR často využívá \textbf{koherentní sčítání (střádání)} signálů z $N$ opakovaných měření. Protože signál je při každém opakování stejný, zatímco šum je náhodný s nulovou střední hodnotou, výsledný poměr signálu k šumu $\bar{P}$ roste s počtem měření $N$:
+\begin{equation} \label{eq:SN_avg}
+\bar{P} = P_0 \sqrt{N} \tag{22}
+\end{equation}
+kde $P_0$ je poměr S/N pro jedno měření. Směrodatná odchylka šumu $\sigma_N$ tedy klesá jako $1/\sqrt{N}$.
 
 % ----------------------------------------------------------------------
 %  Výsledky a zpracování měření
@@ -73,10 +112,12 @@ Délka pulzu ($\mu$s) & Amplituda (Au) \\
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=1\linewidth]{A10 - NMR/Ampl_delka pulzu.png}
+    \includegraphics[width=0.9\linewidth]{A10 - NMR/Ampl_delka pulzu.png}
     \caption{Závislost amplitudy signálu na délce pulzu}
     \label{fig:amp-del}
 \end{figure}
+
+\newpage
 
 Parametr $B$ odpovídá úhlové rychlosti otáčení $\omega$
 
@@ -87,7 +128,7 @@ Parametr $B$ odpovídá úhlové rychlosti otáčení $\omega$
 Stejným způsobem jako v předchozím úkolu můžeme spočítat magnetickou indukci $B_1$
 
 \begin{equation}
-    B_1 = 0,00129 \; T
+    B_1 = (1,29 \pm 0,003) \cdot 10^{-3} \; T
 \end{equation}
 
 Parametr fitu $A$ je
@@ -110,7 +151,7 @@ Podobně délku pulzu, při které dochází k natočení o 180°, tedy minimál
 
 \subsection{Stanovení spin mřížkové relaxační doby $T_1$}
 
-Nastavili jsme délku pulzu na 4 $\mu s$, což odpovídá maximální amplitudě z předchozího měření. Proměřili jsme výslednou amplitudu v závislosti na době opakování celé frekvence. Naměřené hodnoty jsou uvedeny v tabulce \ref{tab:relaxace_T1}. Tuto závislost jsme následně znázornili v grafu. Závislost jsem podle \cite{bib:studijni-text} proložili fitem ve tvaru $y = A \cdot \exp{-\frac{x}{B}}$.
+Nastavili jsme délku pulzu na 4 $\mu s$, což odpovídá maximální amplitudě z předchozího měření. Proměřili jsme výslednou amplitudu v závislosti na době opakování celé frekvence. Naměřené hodnoty jsou uvedeny v tabulce \ref{tab:relaxace_T1}. Tuto závislost jsme následně znázornili v grafu \ref{fig:T1}. Závislost jsem podle \cite{bib:studijni-text} proložili fitem ve tvaru $y = A \cdot (1-\exp{-\frac{x}{B}})$.
 
 \begin{table}[!h]
 \centering
@@ -145,6 +186,8 @@ Doba opakováni sekvence (ms) & Amplituda (Au) \\
     \caption{Závislost amplitudy signálu na době opakování}
     \label{fig:T1}
 \end{figure}
+
+\newpage
 
 Z fitu jsme určili relaxační dobu $T_1$, což odpovídá parametru $B$
 
@@ -193,10 +236,12 @@ D2 (ms) & D3 (ms) & Amplituda (Au) \\
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=1\linewidth]{A10 - NMR/T2 echo.png}
+    \includegraphics[width=0.96\linewidth]{A10 - NMR/T2 echo.png}
     \caption{Závislost amplitudy signálu spinového echa na odstupu pulzů}
     \label{fig:T2-echo}
 \end{figure}
+
+\newpage
 
 Parametr $B$ odpovídá relaxační době $T_2$
 
@@ -211,24 +256,76 @@ Parametr $A$ je roven
 \end{equation}
 
 \subsection{Koherentní sumace}
-Nakonec jsme ověřili vztah mezi směrodatnou odchylkou šumu a počtu zprůměrování (parametr zpracování signálu). Tento parametr jsme postupně zvyšovali a neměřený graf po zprůměrovaní a provedení Fourierově transformaci ukládali. Poté jsme spočítali směrodatnou odchylku v oblasti šumu.
+Nakonec jsme ověřili vztah mezi směrodatnou odchylkou šumu a počtu zprůměrování (parametr zpracování signálu). Tento parametr jsme postupně zvyšovali a neměřený graf po zprůměrovaní a provedení Fourierovy transformace ukládali. Poté jsme spočítali směrodatnou odchylku v oblasti šumu. Na obrázku \ref{fig:souhrn-prum} jsou znázorněny všechny naměřené průběhy signálu pro různý počet průměrování $N$. Z technických důvodů se nastavený počet v praktiku měří i s opačnou fází, proto tato hodnota $N$ je dvojnásobná oproti údaji v praktiku.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{A10 - NMR/Všechny grafy sumace.png}
+    \caption{Souhrn různých průběhů pro různý počet průměrování}
+    \label{fig:souhrn-prum}
+\end{figure}
+
+V jistých oblastech šumu (vlevo od peaků) jsme spočítali směrodatné odchylky zobrazené v tabulce \ref{tab:sumace_sn}.
+
+\begin{table}[!h]
+\centering
+\caption{Závislost směrodatné odchylky šumu $\sigma_N$ na počtu sumací $N$.}
+\label{tab:sumace_sn}
+\begin{tabular}{c c c}
+\hline\noalign{\smallskip}
+$N$ & $1/\sqrt{N}$ & $\sigma_N$ (Au) \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+2 & 0,707 & $2,17 \times 10^{-4}$ \\
+4 & 0,500 & $1,46 \times 10^{-4}$ \\
+8 & 0,354 & $1,06 \times 10^{-4}$ \\
+16 & 0,250 & $7,25 \times 10^{-5}$ \\
+23 & 0,209 & $6,20 \times 10^{-5}$ \\
+64 & 0,125 & $3,93 \times 10^{-5}$ \\
+128 & 0,088 & $2,75 \times 10^{-5}$ \\
+256 & 0,063 & $1,84 \times 10^{-5}$ \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+Nakonec jsme tuto závislost znázornili v grafu \ref{fig:stdev-šum} a proložili lineárním fitem, pro potvrzení závislosti.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{A10 - NMR/stdev.png}
+    \caption{Závislost směrodatné odchylky šumu na převrácené hodnotě odmocniny z počtu sumací}
+    \label{fig:stdev-šum}
+\end{figure}
+
+Absolutní člen lineární regrese jsme zafixovali na 0. Parametr směrnice přímky A je roven
+
+\begin{equation}
+    A = (3 \pm 0,02) \cdot 10^{-4}
+\end{equation}
+
+Tento parametr představuje základní šumovou charakteristiku přístroje při jednom měření, udává směrodatnou odchylku pro $N = 1$,
 
     
 % ----------------------------------------------------------------------
 %  Diskuse výsledků
 % ----------------------------------------------------------------------			
 \section{Diskuse výsledků}
+Spočtená magnetická indukce permanentního magnetu $B_0$ je v souladu s předpokládanou hodnotou podle \cite{bib:studijni-text}. Také indukce $B_1$ potvrzuje teorii, která říká, že je řádově mnohem nižší než $B_0$ a tato velikost dostačuje.
 
-Indukce B0 podle frekvence v souladu se stud. textem
+Při měření relaxační doby $T_1$ jsme u zobrazené závislosti \ref{fig:T1} pozorovali různé velikosti amplitud pro různé doby opakování sekvence. Při příliš krátkých dobách nestíhá osa precese zrelaxovat do rovnovážného stavu, proto měříme nižší amplitudy.
 
-Malá B1 potvrzuje teorii
+Při porovnání měření pomocí spinového echa a relaxační doby $T_1$ dostáváme různé amplitudy pro stejné parametry pulzu. To je způsobeno nastavením začátku měření. V případě echa program začíná měřit v poloze maxima vzniklé rezonance, naopak při měření doby $T_1$ je nastaven počátek až po mrtvé době, tedy až po určité době po maximu. To je výhoda měření pomocí echa, kde signál vzniká až v čase po mrtvé době a můžeme ho změřit celý a zároveň zachovává spektrální informaci.
 
-T1 nestíhá relaxovat
+Také jsme ověřili předpokládanou nerovnost $T_1$>>$T_2$. Spin-mřížková relaxace je tedy asi 30x pomalejší než spin-spinová u pevné látky (pryže).
 
-při echu jiný začátek, viz papír
+V posledním úkolu jsme potvrdili kvadratickou závislost směrodatné odchylky na počtu měření. To znamená pro zdvojnásobení přesnosti šumu je třeba zvýšit počet měření čtyřikrát.
+
+Nehomogenitu permanentního magnetu mohou ovlivnit například malé změny teploty nebo slunečního svitu. To může vnášet do měření (typicky časově delšího) určitou nejistotu. Při hledání optimálně homogenní polohy jsme si všimli, že změna je lineární. Tohoto lineárního gradientu lze využít pro NMR imaging v jedné ose na stejném zařízení. Metoda spinového echa navíc především kompenzuje nehomogenitu pole $B_0$, která by jinak vedla k velmi rychlému rozpadu signálu, a umožňuje tak změřit skutečnou, výrazně delší relaxační dobu $T_2$. Což je další výhoda této metody.
 
 
 % ----------------------------------------------------------------------
 %  Závěr
 % ----------------------------------------------------------------------
 \section{Závěr}
+V rámci praktické úlohy jsme se seznámili s pulzní metodou NMR na vzorku pryže. Podařilo se nastavit optimální podmínky měření a z Larmorovy frekvence $\nu_0 = 18,307$~MHz byla určena indukce permanentního magnetu $B_0 \approx 0,43$~T. Z měření závislosti amplitudy signálu FID na délce excitačního pulzu byla stanovena velikost radiofrekvenčního pole $B_1 = (1,29 \pm 0,003)$~mT. Metodou inverzního zotavení byla změřena spin-mřížková relaxační doba $T_1 = (44 \pm 2)$~ms. Pomocí sekvence spinového echa byla určena spin-spinová relaxační doba $T_2 = (1,48 \pm 0,08)$~ms. Potvrdili jsme tak očekávaný vztah $T_1 \gg T_2$ pro pevné látky. Nakonec bylo kvantitativně ověřeno, že koherentní sčítání signálů z $N$ měření vede ke snížení směrodatné odchylky šumu úměrně $1/\sqrt{N}$, což zlepšuje poměr signálu k šumu. Všechna měření jsou v souladu s teorií pulzní NMR.
