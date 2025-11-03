@@ -30,12 +30,35 @@ Chyba je spočtena pomocí metody přenosu chyb \cite{bib:metoda-prenosu-chyb} j
 \section{Výsledky a zpracování měření}
 
 \subsection{Voltampérové charakteristiky}
-Proměřili jsme voltampérové charakteristiky dvou fotonek GKE a Phywe v propustném směru, abychom určili zda se jedná o plynovou nebo vakuovou fotonku. Podle \cite{bib:zadani} jsme měřili v oboru -3 < $U_a$ < 100 V s krokem 0,5 $V$ na rozsahu 200 $nA$.
+Proměřili jsme voltampérové charakteristiky dvou fotonek GKE a Phywe v propustném směru, abychom určili zda se jedná o plynovou nebo vakuovou fotonku. Podle \cite{bib:zadani} jsme měřili v oboru -3 $V$ < $U_a$ < 100 $V$ s krokem 0,5 $V$ na rozsahu 200 $nA$. Vzorek jsme osvětlovali pomocí rtuťové výbojky s použitým filtrem s vlnovou délkou 546 nm. Naměřené závislosti jsou znázorněny v obrázku \ref{fig:VA-char}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{A9 - Planck/VA charakteristiky.png}
+    \caption{Voltampérové charakteristiky fotonek Phywe a GKE}
+    \label{fig:VA-char}
+\end{figure}
+
+Na základě těchto závislostí jsme označili fotonku GKE jako plynovou a Phywe jako vakuovou. U fotonky GKE pozorujeme u nízkých hodnot napětí zlom v nárůstu proudu a poté monotónní růst proudu s napětím. To je způsobeno lavinovou ionizací plynu ve fotonce. Naopak u vakuové fotonky Phywe pozorujeme dosažení určité hodnoty proudu, která se již nezvyšuje s rostoucím napětím.
+
+\subsection{Určení Planckovy konstanty}
+
+Pro měření Planckovy konstanty jsme měřili v závěrném směru s vakuovou fotonkou Phywe (proč jsme zvolili tuto fotonku, viz. diskuze). Opět jsme jako zdroj osvětlení použili rtuťovou výbojku. Měnili jsme použité filtry tak, abychom proměřili závislost pro různé vlnové délky, konkrétně 365, 405, 436, 546 a 577 nm.
+
+Měřili jsme v rozsahu -0,5 $V$ > $U_a$ > -3 $V$ s krokem pouze 0,05 V. Všechny naměřené závislosti jsou zobrazeny na obrázku.
+
+U všech charakteristik jsme pozorovali určitou hodnotu nasyceného proudu $I_s$. V části grafu před saturací jsme vybrali přibližně 5 bodů pro každou závislost a tuto oblast jsme fitovali lineární regresí s předpisem $y = a\cdot x + b$. Průsečík této přímky s hodnotou nasyceného proudu $I_s$ jsme označili jako kritické napětí $V_0$. Tento postup je zobrazen na obrázku.
+
+
     
 % ----------------------------------------------------------------------
 %  Diskuse výsledků
 % ----------------------------------------------------------------------			
 \section{Diskuse výsledků}
+
+Proč nemůžeme měřit s plynovou fotonkou Placka?
+
+Divné body vlevo na grafu.
 
 % ----------------------------------------------------------------------
 %  Závěr
